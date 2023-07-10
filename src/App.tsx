@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Top from './Pages/Top';
 import Display from './Pages/Display';
 
@@ -9,6 +9,7 @@ function App() {
     <Routes>
       <Route path="/Top" element={<Top />} />
       <Route path="/Display" element={<Display />} />
+      <Route path="*" element={<Navigate to="/Top" />} />
     </Routes>
   </BrowserRouter>
   );
