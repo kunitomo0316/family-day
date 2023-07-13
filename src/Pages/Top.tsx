@@ -16,6 +16,7 @@ import { GetPostInfo, PostInfo } from '../Components/GetPostInfo';
 import { INSERT_QUERY } from '../Components/InsertPostInfo';
 import { useMutation } from '@apollo/client';
 import { uploadImage } from '../api/uploadImage';
+import ImageIcon from '@mui/icons-material/Image';
 import { PostItem } from '../Components/PostItem';
 
 function Top() {
@@ -116,7 +117,7 @@ function Top() {
                 }}
                 onClick={handlePhotoSelect}
               >
-                写真を選択
+                <ImageIcon sx={{ mb: 0.4, mr: 0.3 }} />写真を選択
               </Button>
             </Box>
           )}
