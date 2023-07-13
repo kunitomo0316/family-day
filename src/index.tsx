@@ -9,7 +9,7 @@ import {
   InMemoryCache,
   createHttpLink,
 } from '@apollo/client';
-import { endPoint } from './common/const/endPoint';
+import { endPoint } from './Common/Constants/endPoint';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
