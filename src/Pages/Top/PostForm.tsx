@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SendIcon from '@mui/icons-material/Send';
+import ImageIcon from '@mui/icons-material/Image';
 import { useMutation } from '@apollo/client';
 import { uploadImage } from '../../Api/uploadImage';
 import { INSERT_POST } from '../../GraphQL/Post/mutations';
@@ -130,6 +131,7 @@ export const PostForm = (props: PostFormProps) => {
                 }}
                 onClick={handlePhotoSelect}
               >
+                <ImageIcon sx={{ mb: 0.4, mr: 0.3 }} />
                 写真を選択
               </Button>
             </Box>
