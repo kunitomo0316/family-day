@@ -43,11 +43,14 @@ export const useGetPosts = (take: number): PostRefetchType => {
 
   return {
     posts: data.getPosts.map((post: PostType) => {
+      // 取得時になぜか文字型に変換されているため、日付オブジェクトに変換
+      const createAt = new Date(post.createAt);
       return {
         postId: post.postId,
         userName: post.userName,
         message: post.message,
         image: post.image,
+        createAt: createAt.toLocaleString(),
       };
     }),
     refetch: refetch,

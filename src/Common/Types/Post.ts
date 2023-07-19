@@ -3,5 +3,5 @@ export type PostType = {
   userName: string;
   message: string;
   image: string | null;
-  createAt: string;
+  createAt: Date;
 };

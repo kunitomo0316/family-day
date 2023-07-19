@@ -32,8 +32,11 @@ export const PostItem = (props: PostItemProps) => {
           <Typography gutterBottom variant="h5" component="div">
             {post.userName}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="h6" color="text.secondary">
             {post.message}
+          </Typography>
+          <Typography color="text.secondary" align="right">
+            {post.createAt.toLocaleString()}
           </Typography>
         </CardContent>
       </Card>
