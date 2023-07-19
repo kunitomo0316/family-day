@@ -9,12 +9,12 @@ import {
   InMemoryCache,
   createHttpLink,
 } from '@apollo/client';
-import { endPoint } from './Common/Constants/endPoint';
+import { BACKEND_URL } from './Common/Constants/backendUrl';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: createHttpLink({
-    uri: endPoint.graphql,
+    uri: BACKEND_URL.GRAPHQL,
     credentials: 'include',
   }),
 });

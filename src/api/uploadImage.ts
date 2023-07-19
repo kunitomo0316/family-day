@@ -1,6 +1,7 @@
-import { endPoint } from '../Common/Constants/endPoint';
-
 // 画像アップロード処理
+
+import { BACKEND_URL } from '../Common/Constants/backendUrl';
+
 // 補足：保存した際のファイル名かnullを返してます
 export const uploadImage = async (imageFile: File) => {
   if (imageFile) {
@@ -8,7 +9,7 @@ export const uploadImage = async (imageFile: File) => {
       const formData = new FormData();
       formData.append('image', imageFile);
 
-      const response = await fetch(`${endPoint.images}/upload`, {
+      const response = await fetch(`${BACKEND_URL.UPLOAD_IMAGE}`, {
         method: 'POST',
         body: formData,
       });

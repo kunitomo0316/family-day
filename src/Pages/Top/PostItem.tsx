@@ -1,7 +1,7 @@
 import { Box, Card, CardMedia, CardContent, Typography } from '@mui/material';
 import React from 'react';
-import { endPoint } from '../../Common/Constants/endPoint';
 import { PostType } from '../../Common/Types/Post';
+import { BACKEND_URL } from '../../Common/Constants/backendUrl';
 
 type PostItemProps = {
   post: PostType;
@@ -10,7 +10,9 @@ type PostItemProps = {
 export const PostItem = (props: PostItemProps) => {
   const post = props.post;
   // 画像リンク取得
-  const imageUrl = post.image ? `${endPoint.images}/${post.image}` : undefined;
+  const imageUrl = post.image
+    ? `${BACKEND_URL.FETCH_IMAGE}/${post.image}`
+    : undefined;
 
   return (
     <React.Fragment key={post.postId}>

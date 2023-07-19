@@ -12,12 +12,11 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SendIcon from '@mui/icons-material/Send';
 import ImageIcon from '@mui/icons-material/Image';
-import { useMutation } from '@apollo/client';
 import { uploadImage } from '../../Api/uploadImage';
-import { INSERT_POST } from '../../GraphQL/Post/mutations';
+import { useCreatePost } from '../../Utils/Post/createPost';
 
 type PostFormProps = {
-  refetchPosts: () => void;
+  refetch: () => void;
 };
 
 export const PostForm = (props: PostFormProps) => {
@@ -29,22 +28,26 @@ export const PostForm = (props: PostFormProps) => {
   );
 
   // データ更新処理
-  const [insertPost, { loading, error }] = useMutation(INSERT_POST);
+  const [createPost, { loading, error }] = useCreatePost();
 
   // 投稿ボタン押下時処理
   const useHandleClick = async () => {
     // fileNameはany型だが、ファイル名かnullが入る想定
     const fileName = selectedPhoto ? await uploadImage(selectedPhoto) : null;
     // 更新処理発動
-    insertPost({
-      variables: { userName: userName, message: message, image: fileName },
+    await createPost({
+      variables: {
+        userName: userName,
+        message: message,
+        image: fileName,
+      },
     });
     // 入力内容の初期化
     setUserName('');
     setMessage('');
     setSelectedPhoto(undefined);
     // 一覧の再取得
-    props.refetchPosts();
+    props.refetch();
   };
 
   // 画像選択処理
@@ -174,6 +177,7 @@ export const PostForm = (props: PostFormProps) => {
               '&:hover': { backgroundColor: 'lightgray' },
             }}
             onClick={useHandleClick}
+            disabled={!(userName.match(/\S/) && message.match(/\S/))}
           >
             <SendIcon sx={{ mb: 0.4, mr: 0.3 }} />
             投稿

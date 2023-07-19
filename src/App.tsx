@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import Display from './Pages/Display';
+import Display from './Pages/Display/Display';
 import { Top } from './Pages/Top/Top';
 
 function App() {
