@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# 社内 SNS α 版 フロントエンド
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Git Clone
 
-## Available Scripts
+```
+git clone https://github.com/kunitomo0316/family-day.git
+```
 
-In the project directory, you can run:
+## プロジェクト実行
 
-### `npm start`
+### ディレクトリ移動
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+cd family-day
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### モジュールのインストール
 
-### `npm test`
+```
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### サーバー立てる
 
-### `npm run build`
+```
+npm run start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 作成した画面
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 投稿画面
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+http://localhost:3000/Top
 
-### `npm run eject`
+### 一覧画面（削除予定）
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+http://localhost:3000/Display
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### その他のリンク
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+投稿画面に自動遷移するようになってます
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 備考
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- NodeJS はインストールされている想定
+- 事前に[フロントエンド](https://github.com/kunitomo0316/family-day.git)も clone し、ローカルサーバを立てておいてください
+- こちらは一部のメンバーのみに公開しております
+- 今後記入事項
+  - 必要ツールのインストール
